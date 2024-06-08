@@ -10,6 +10,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -56,5 +57,22 @@ public class MainScreenControllerr {
     @GetMapping("/about")
     public String aboutPage(){
         return "about";
+    }
+
+    @GetMapping("/buyNow")
+    public String buyNow(@RequestParam("productID") long theID){
+        int theIDint = (int) theID;
+        Product product = productService.findById(theIDint);
+
+        if(product.getInv() > 0) {
+            int updatedProduct = product.getInv() - 1;
+
+            product.setInv(updatedProduct);
+            productService.save(product);
+
+            return "success.html";
+        }else{
+            return "failure.html";
+        }
     }
 }

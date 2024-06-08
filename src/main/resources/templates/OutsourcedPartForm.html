@@ -13,15 +13,23 @@
 
 <!-- Add hidden form field to handle update -->
     <p><input type="hidden" th:field="*{id}"/></p>
-
-<p><input type="text" th:field="*{name}" placeholder="Name" class="form-control mb-4 col-4"/></p>
-
-<p><input type="text" th:field="*{price}" placeholder= "Price" class="form-control mb-4 col-4"/></p>
+    <label>Name: </label>
+    <p><input type="text" th:field="*{name}" placeholder="Name" class="form-control mb-4 col-4"/></p>
+    <label>Price: </label>
+    <p><input type="text" th:field="*{price}" placeholder= "Price" class="form-control mb-4 col-4"/></p>
     <p th:if="${#fields.hasErrors('price')}" th:errors="*{price}">Price Error</p>
-
-<p><input type="text" th:field="*{inv}" placeholder="Inventory" class="form-control mb-4 col-4"/></p>
+    <label>Inventory: </label>
+    <p><input type="text" th:field="*{inv}" placeholder="Inventory" class="form-control mb-4 col-4"/></p>
     <p th:if="${#fields.hasErrors('inv')}" th:errors="*{inv}">Inventory Error</p>
-
+    <label>Min: </label>
+    <p>
+        <input type="text" path="min" th:field="*{min}" placeholder="Minimum" class="form-control mb-4 col-4"/>
+    </p>
+    <label>Max: </label>
+    <p>
+        <input type="text" path="max" th:field="*{max}" placeholder="Max" class="form-control mb-4 col-4"/>
+    </p>
+    <label>Company Name: </label>
     <p><input type="text" th:field="*{companyName}" placeholder="Company Name" class="form-control mb-4 col-4"/></p>
 
 <p><input type="submit" value="Submit" /></p>

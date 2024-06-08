@@ -64,15 +64,15 @@ public class BootStrapData implements CommandLineRunner {
         if(partRepository.count() < 5 || productRepository.count() < 5){
             InhousePart newPart = new InhousePart();
             newPart.setName("Wrench");
-            newPart.setInv(3);
+            newPart.setInv(4);
             newPart.setPrice(4.5);
             newPart.setMin(3);
             newPart.setMax(7);
             partRepository.save(newPart);
             InhousePart newPart2 = new InhousePart();
-            newPart2 .setName("Jewelers set");
-            newPart2 .setInv(4);
-            newPart2 .setPrice(2.0);
+            newPart2.setName("Jewelers set");
+            newPart2.setInv(4);
+            newPart2.setPrice(2.0);
             newPart2.setMin(3);
             newPart2.setMax(8);
             partRepository.save(newPart2);

@@ -32,6 +32,12 @@
     <label>Company Name: </label>
     <p><input type="text" th:field="*{companyName}" placeholder="Company Name" class="form-control mb-4 col-4"/></p>
 
+    <div th:if="${#fields.hasGlobalErrors()}">
+        <div th:each="error : ${#fields.globalErrors()}">
+            <p th:text="${error}"></p>
+        </div>
+    </div>
+
 <p><input type="submit" value="Submit" /></p>
 </form>
 <a href="http://localhost:8080/">Link

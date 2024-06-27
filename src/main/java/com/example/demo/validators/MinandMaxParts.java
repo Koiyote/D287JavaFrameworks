@@ -13,7 +13,7 @@ public class MinandMaxParts implements ConstraintValidator<ValidMinAndMax, Part>
 
     @Override
     public boolean isValid(Part part, ConstraintValidatorContext constraintValidatorContext) {
-        if(part.getMax() <= part.getInv() || part.getMin() >= part.getInv()){
+        if(part.getMax() < part.getInv() || part.getMin() > part.getInv()){
             return false;
         } else{
             return true;

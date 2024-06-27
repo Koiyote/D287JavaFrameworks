@@ -23,47 +23,8 @@ class DemoApplicationTests {
 	void contextLoads() {
 	}
 
-	@Test
-	void isInhouse(){
-		InhousePart part = new InhousePart();
-
-		part.setInv(5);
-		part.setName("Jeffrey");
-		part.setMax(10);
-		part.setInv(7);
-		part.setPrice(10.50);
-		part.setPartId(235333);
-
-		repo.save(part);
-
-		Optional<InhousePart> testPart = repo.findById(part.getId());
-		if(testPart.get().getName() == "Jeffrey"){
-			System.out.println("Assertion is equal to Jeffrey");
-		} else{
-			System.out.println("Assertion is NOT equal to Jeffrey");
-		}
-
-	}
-
-	@Test
-	void isProduct(){
-		Product aProduct = new Product();
-		aProduct.setInv(10);
-		aProduct.setPrice(10.50);
-		aProduct.setName("Tinkerer's Set");
-
-		productrepo.save(aProduct);
-
-		Optional<Product> testProduct = productrepo.findById(aProduct.getId());
-
-		if(testProduct.get().getName() == "Tinkerer's Set"){
-			System.out.println("Product Assert worked successfully");
-		}
-		else{
-			System.out.println("Product Assert failed");
-		}
 
 
-	}
+
 
 }

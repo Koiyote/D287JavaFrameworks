@@ -22,8 +22,10 @@
     <p><input type="text" th:field="*{inv}" placeholder="Inventory" class="form-control mb-4 col-4"/></p>
 
     <p>
-    <div th:if="${#fields.hasAnyErrors()}">
-    <ul><li th:each="err: ${#fields.allErrors()}" th:text="${err}"></li></ul>
+    <div th:if="${#fields.hasGlobalErrors()}">
+        <div th:each="error : ${#fields.globalErrors()}">
+            <ul><li th:text="${error}" class="mt-0 ml-0 mr-0 mb-0"></li></ul><p ></p>
+        </div>
     </div>
     </p>
     <p><input type="submit" value="Submit" /></p>

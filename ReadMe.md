@@ -59,3 +59,10 @@ in order to allow for that last part to be added
 
 Added Readme in MD format instead of DocX Coyte Cline 6/12/2024 6:07 PM
 -Added Readme
+
+Deleted the unit tests from J in DemoApplicationtests.java. 
+Fixed the lingering issue with adding a part to a product with respect to the minimum. 
+Added an enhancement to OutsourcedPartForm.html to now display the error message from validation on parts. 
+Added to PartTest.java two unit tests. 
+Added Readme
+
